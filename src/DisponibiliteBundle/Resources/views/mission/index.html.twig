@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <h1>Missions list</h1>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <table class="table">
+        <thead class="thead-dark">
+                <th scope="col">Id</th>
+                <th scope="col">Idclient</th>
+                <th scope="col">Datemission</th>
+                <th scope="col">Description</th>
+                <th scope="col">Etat</th>
+                <th scope="col">Evaluation</th>
+                <th scope="col">Frais</th>
+                <th scope="col">Actions</th>
+        </thead>
+        <tbody>
+        {% for mission in missions %}
+            <tr>
+                <td><a href="{{ path('mission_show', { 'id': mission.id }) }}">{{ mission.id }}</a></td>
+                <td>{{ mission.idClient }}</td>
+                <td>{% if mission.dateMission %}{{ mission.dateMission|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ mission.description }}</td>
+                <td>{{ mission.etat }}</td>
+                <td>{{ mission.evaluation }}</td>
+                <td>{{ mission.frais }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('mission_show', { 'id': mission.id }) }}">details</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    
+{% endblock %}

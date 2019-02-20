@@ -1,0 +1,56 @@
+disponibilite_index:
+  path:     /
+  defaults: { _controller: "DisponibiliteBundle:Disponibilite:index" }
+
+disponibilite_show:
+  path:     /show/{id}
+  defaults: { _controller: "DisponibiliteBundle:Disponibilite:show" }
+
+disponibilite_ajouter:
+  path:     /ajouter
+  defaults: { _controller: "DisponibiliteBundle:Disponibilite:ajouter" }
+
+
+disponibilite_modifier:
+  path:    /modifier/{id}
+  defaults: { _controller: "DisponibiliteBundle:Disponibilite:modifier" }
+
+
+
+disponibilite_supp:
+  path:     /supprimer/{id}
+  defaults: { _controller: "DisponibiliteBundle:Disponibilite:supprimer" }
+
+
+disponibilite_tec_id:
+  path:     /tec/disponbilite/show/{id}
+  defaults: { _controller: "DisponibiliteBundle:Disponibilite:showById" }
+
+
+
+mission_index:
+  path:     /mission
+  defaults: { _controller: "DisponibiliteBundle:Mission:index" }
+
+mission_show:
+  path:     /mission/show/{id}
+  defaults: { _controller: "DisponibiliteBundle:Mission:show" }
+
+mission_ajouter:
+  path:     /mission/ajouter
+  defaults: { _controller: "DisponibiliteBundle:Mission:ajouter" }
+
+
+mission_modifier:
+  path:     /mission/modifier/{id}
+  defaults: { _controller: "DisponibiliteBundle:Mission:modifier" }
+
+
+
+mission_supp:
+  path:     /mission/supprimer/{id}
+  defaults: { _controller: "DisponibiliteBundle:Mission:supprimer" }
+
+
+
+

@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <h1>Disponibilite</h1>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id :</th>
+                <td>{{ disponibilite.id }}</td>
+            </tr>
+            <tr>
+                <th>Heure debut :</th>
+                <td>{{ disponibilite.heureDeb|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Heure fin :</th>
+                <td>{{ disponibilite.heureFin|date('Y-m-d H:i:s') }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('disponibilite_index') }}">retourner a la liste</a>
+        </li>
+    </ul>
+{% endblock %}

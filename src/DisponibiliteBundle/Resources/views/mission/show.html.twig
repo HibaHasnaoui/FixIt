@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <h1>Mission</h1>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <table class="table">
+    <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ mission.id }}</td>
+            </tr>
+            <tr>
+                <th>Idclient</th>
+                <td>{{ mission.idClient }}</td>
+            </tr>
+            <tr>
+                <th>Datemission</th>
+                <td>{% if mission.dateMission %}{{ mission.dateMission|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ mission.description }}</td>
+            </tr>
+            <tr>
+                <th>Etat</th>
+                <td>{{ mission.etat }}</td>
+            </tr>
+            <tr>
+                <th>Evaluation</th>
+                <td>{{ mission.evaluation }}</td>
+            </tr>
+            <tr>
+                <th>Frais</th>
+                <td>{{ mission.frais }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('mission_index') }}">retourner a la liste</a>
+        </li>
+    </ul>
+{% endblock %}

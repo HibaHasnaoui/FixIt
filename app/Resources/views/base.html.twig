@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{% block title  %}FixIt{% endblock %}</title>
+    <meta charset="utf-8">
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('Front/css/reset.css') }}" type="text/css" media="screen">
+        <link rel="stylesheet" href="{{ asset('Front/css/style.css') }}" type="text/css" media="screen">
+        <link rel="stylesheet" href="{{ asset('Front/css/layout.css') }}" type="text/css" media="screen">
+        <script src="{{ asset('Front/js/jquery-1.6.3.min.js') }}"></script>
+        <script src="{{ asset('Front/js/cufon-yui.js') }}"></script>
+        <script src="{{ asset('Front/js/cufon-replace.js') }}"></script>
+        <script src="{{ asset('Front/js/NewsGoth_BT_400.font.js') }}"></script>
+        <script src="{{ asset('Front/js/FF-cash.js') }}"></script>
+        <script src="{{ asset('Front/js/script.js') }}"></script>
+        <script src="{{ asset('Front/js/jquery.equalheights.js') }}"></script>
+        <script src="{{ asset('Front/js/easyTooltip.js') }}"></script>
+        {#<!--[if lt IE 9]>#}
+        <script src="{{ asset('Front/js/html5.js') }}"></script>
+        <link rel="stylesheet" href="{{ asset('Front/css/ie.css') }}" type="text/css" media="screen">
+        {#<![endif]-->#}
+    {% endblock %}
+</head>
+<body id="page3">
+<div class="extra">
+    <div class="main">
+        <!--==============================header=================================-->
+        {% block header %}
+            <header>
+                <div class="indent">
+                    <div class="row-top">
+                        <div class="wrapper">
+                            <h1><a href="index.html">FixIt</a></h1>
+                            <strong class="support" >{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                                    {{  app.user.username}} |
+                                    <a style="color: white" href="{{ path('fos_user_security_logout') }}">
+                                        deconnexion
+                                    </a>
+                                {% else %}
+                                    <a  style="color: white" href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+                                {% endif %}</strong> </div>
+
+                    </div>
+                    <nav>
+                        <ul class="menu">
+                            <li><a href="">Aceuill</a></li>
+                            <li><a href="{{ path('fixit_service') }}">Services</a></li>
+                            <li><a class="active" href="{{ path('fixit_blog') }}">blog</a></li>
+                            <li><a href="{{ path('fixit_vente') }}">Vente</a></li>
+                            <li><a href="{{ path('fixit_disponibilite') }}"> Dispo</a></li>
+                            <li class="last"><a href="{{ path('fixit_contact') }}">Contacts</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+        {% endblock %}
+        {% block content %}
+            <!--==============================content================================-->
+
+        {% endblock %}
+    </div>
+</div>
+{% block footer %}
+    <!--==============================footer=================================-->
+
+{% endblock %}
+</body>
+</html>
