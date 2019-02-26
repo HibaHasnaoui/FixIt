@@ -34,7 +34,7 @@
                             <strong class="support" >{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                                     {{  app.user.username}} |
                                     <a style="color: white" href="{{ path('fos_user_security_logout') }}">
-                                        deconnexion
+                                        Deconnexion
                                     </a>
                                 {% else %}
                                     <a  style="color: white" href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>

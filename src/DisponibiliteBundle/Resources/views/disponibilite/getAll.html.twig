@@ -1,22 +1,31 @@
 {% extends 'base.html.twig' %}
 
 {% block content %}
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
+
+           {# {% for disponibilite in disponibilites %}
+
+                        <h4>{{ disponibilite.tec }}</h4>
+
+
+
+            {% endfor %}#}
+
+
+<body>
     <h1>toute les disponibilites</h1>
 
-    <table class="table">
-        <thead class="thead-dark">
+    <table border="3">
+
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">tec</th>
-                <th scope="col">Heuredeb</th>
-                <th scope="col">Heurefin</th>
-                <th scope="col">Actions</th>
+                <th >#</th>
+                <th >tec</th>
+                <th >Heuredeb</th>
+                <th >Heurefin</th>
+                <th >Actions</th>
             </tr>
-        </thead>
-        <tbody>
+
+
         {% for disponibilite in disponibilites %}
             <tr>
                 <th scope="row"><a href="{{ path('disponibilite_show', { 'id': disponibilite.id }) }}">{{ disponibilite.id }}</a></th>
@@ -34,8 +43,9 @@
                 </td>
             </tr>
         {% endfor %}
-        </tbody>
+
     </table>
+</body>
 
     
 {% endblock %}
